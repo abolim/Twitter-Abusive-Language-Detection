@@ -22,7 +22,7 @@ Citation: Lee, Y., Yoon, S., & Jung, K. (2018). Comparative studies of detecting
 URL: https://arxiv.org/abs/1808.10245
 Git Repository: https://github.com/younggns/comparative-abusive-lang/blob/master/README.md
 
-DATA
+**DATA**
  
 The link to the exact data used in the research is mentioned in the GitHub page by the authors.
 The data itself is hosted in another GitHub repository called hatespeech-twitter managed by ENCASE (The organization for the ENCASE (ENhancing seCurity and privAcy in the Social wEb) Horizon 2020 European Research Programme). Following is the link to the repository hosting the data
