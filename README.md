@@ -1,7 +1,7 @@
 # Replication of Comparative Studies of Detecting Abusive Language on Twitter
 Repository for the project on research paper replication in WI 2020 Data Reproducibility course
 
-## CONTRIBUTORS
+### CONTRIBUTORS
 
 1. [Aboli Moroney](https://github.com/abolim "Aboli's Github page") <a itemprop="sameAs" content="https://orcid.org/0000-0003-1226-3185" href="https://orcid.org/0000-0003-1226-3185" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>
 
@@ -11,7 +11,7 @@ Repository for the project on research paper replication in WI 2020 Data Reprodu
 
 4. [Samarth Modi](https://github.com/samarthjmodi "Samarth's Github page") <a itemprop="sameAs" content="https://orcid.org/0000-0003-0681-231X" href="https://orcid.org/0000-0003-0681-231X" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>
 
-## CONTENTS
+### CONTENTS
 
 Lately, there has been a lot of effort and research on identifying content that is abusive or offensive on online and social media. Twitter recently published a relatively large and reliable dataset on ‘Hate and Abusive Speech on Twitter’. As Data Scientists, we fully understand the need to find the best methods and data for identifying such content and flagging it as inappropriate.
  
@@ -24,7 +24,7 @@ URL: https://arxiv.org/abs/1808.10245
 
 Git Repository: https://github.com/younggns/comparative-abusive-lang/blob/master/README.md
 
-## DATA
+### DATA
  
 The link to the exact data used in the research is mentioned in the GitHub page by the authors.
 The data itself is hosted in another GitHub repository called hatespeech-twitter managed by ENCASE (The organization for the ENCASE (ENhancing seCurity and privAcy in the Social wEb) Horizon 2020 European Research Programme). Following is the link to the repository hosting the data: https://github.com/ENCASEH2020/hatespeech-twitter
