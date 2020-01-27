@@ -43,30 +43,22 @@ System type: 64-bit OS, x64-based processor
 
 Python packages and versions:
 
-|Package   	    |     Version            |
+|R Package   	    |     Version            |
 |---------------|:-----------------------|
-|keras	         |      Keras 2.3.1      |
-|os	            |    os0 0.2.14|
-|argparse	      |   argparse 1.4.0|
-|pickle	        |  Pickle5 0.0.9|
-|numpy	         |   Numpy 1.18.1|
-|warnings	      |  Warnings-plugin 0.0.2|
-|pandas	        |   Pandas 0.25.3|
-|functools	     |    Functools 0.5|
-|os-sys	        |  Os-sys 2.1.4|
-|tensorflow	    |  Tensorflow 2.1.0|
-|random	        |  Random2 1.0.1|
-|sklearn	       |   Sklearn 0.0|
-|layers	        |  Layers 0.1.5|
-|future	        |  Future 0.18.2|
-|absolute_import|	  Abs-import 0.0.5|
-|print_function	|  print_function 0.0.4|
-|collections	   |   Collections2 0.3.0|
-|hashlib	       |   Hashlib 20081119|
-|time	          |  Time 1.0.0|
-|datetime	      |  Datetime2 0.7.5|
-|helper	        |  Helper 2.4.2|
-|re	            |  Re101 0.4.0|
-|nltk	          |  Nltk 3.4.5|
-|wordsegment	   |   Wordsegment 1.3.1|
+|keras	         |      2.2.5.0  |
+|reticulate: import(os)|    1.13|
+|argparse	      |  2.0.1|
+|reticulate: import(pickle)	|  1.13|
+|reticulate: import(numpy)	         |  1.13|
+|reticulate: import(warnings)	      |  1.13|
+|dplyr	        |   0.8.3|
+|functools	     |    0.2.0|
+|tensorflow	    |  2.0.0|
+|CARET	       |   6.0-84|
+|future	        |  1.16.0|
+|collections	   |   0.2.3|
+|timeDate	          |  3043.102|
+|lubridate	        |  1.7.4|
+|stringr	            |1.4.0|
+|nlp          |   0.2 -0|
 
