@@ -41,7 +41,7 @@ OS type and version:
 Windows 10 Pro, Version 1903, OS build 18362.535
 System type: 64-bit OS, x64-based processor
 
-Python packages and versions:
+R packages and versions:
 
 |R Package   	    |     Version            |
 |---------------|:-----------------------|
@@ -61,4 +61,6 @@ Python packages and versions:
 |lubridate	        |  1.7.4|
 |stringr	            |1.4.0|
 |nlp          |   0.2 -0|
+
+**Disclaimer: For successful replication of the author's code in Python to R, we may need to use additional libraries from R. We will keep this section updated as we progress in the project.
 
