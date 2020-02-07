@@ -28,7 +28,7 @@ Importing the raw csv file. The csv file has about 30 columns. However, we would
 
 
 ```{r}
-df <- read.csv("data/twitter-hate-speech-classifier-data.csv", header = TRUE)
+df <- read.csv("../data/twitter-hate-speech-classifier-data.csv", header = TRUE)
 
 #Keeping only the necessary columns
 df = df[c("tweet_id", "tweet_text", "does_this_tweet_contain_hate_speech")]
@@ -61,7 +61,7 @@ This step involves
 In order to clean the tweets, we are using the 'quanteda' package. 
 
 ```{r echo=FALSE}
-knitr::read_chunk('analysis/001-tweet-cleaning.R')
+knitr::read_chunk('001-tweet-cleaning.R')
 ```
 
 ```{r cleaning tweets}
