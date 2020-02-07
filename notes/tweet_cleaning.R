@@ -1,0 +1,6 @@
+tweets=gsub("[^[:alnum:]]", " ", tweets)
+print(tweets)
+tweets_dfm=dfm(tweets,remove=stopwords("english"),stem=TRUE,remove_punct=TRUE)
+length(tweets_dfm)
+unique.matrix(tweets_dfm)
+print(tweets_dfm)

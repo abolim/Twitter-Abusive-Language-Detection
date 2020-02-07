@@ -7,3 +7,5 @@ dim(df)
 str(df)
 summary(df)
 colnames(df)
+
+

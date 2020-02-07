@@ -60,11 +60,12 @@ This step involves
 
 In order to clean the tweets, we are using the XXXXX package. 
 
-```{r}
-#read r scrip here
+```{r echo=FALSE}
+knitr::read_chunk('analysis/001-tweet-cleaning.R')
+```
 
-
-
+```{r cleaning tweets}
+head(cleaned_tweets)
 ```
 
 
