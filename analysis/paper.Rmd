@@ -58,7 +58,7 @@ This step involves
 2. Removing the punctuations
 3. Removing the stopgap words
 
-In order to clean the tweets, we are using the XXXXX package. 
+In order to clean the tweets, we are using the 'quanteda' package. 
 
 ```{r echo=FALSE}
 knitr::read_chunk('analysis/001-tweet-cleaning.R')
