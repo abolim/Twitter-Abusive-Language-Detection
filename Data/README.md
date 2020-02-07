@@ -4,6 +4,7 @@ The data used for this replication project can be found in the folder DATA as 't
 URL: https://github.com/abolim/Reproducibility-Research-Replication/tree/master/Data
 
 Details about how to obtain the data from the original data source:
+
 The link to the exact data used in the research is mentioned in the GitHub page by the authors.
 The data itself is hosted in another GitHub repository called hatespeech-twitter managed by ENCASE (The organization for the ENCASE (ENhancing seCurity and privAcy in the Social wEb) Horizon 2020 European Research Programme). Following is the link to the repository hosting the data
 .https://github.com/ENCASEH2020/hatespeech-twitter
