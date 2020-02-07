@@ -6,8 +6,8 @@ URL: https://github.com/abolim/Reproducibility-Research-Replication/tree/master/
 Details about how to obtain the data from the original data source:
 
 The link to the exact data used in the research is mentioned in the GitHub page by the authors.
-The data itself is hosted in another GitHub repository called hatespeech-twitter managed by ENCASE (The organization for the ENCASE (ENhancing seCurity and privAcy in the Social wEb) Horizon 2020 European Research Programme). Following is the link to the repository hosting the data
-.https://github.com/ENCASEH2020/hatespeech-twitter
+The data itself is hosted in another GitHub repository called hatespeech-twitter managed by ENCASE (The organization for the ENCASE (ENhancing seCurity and privAcy in the Social wEb) Horizon 2020 European Research Programme). 
+Following is the link to the repository hosting the data: https://github.com/ENCASEH2020/hatespeech-twitter
 
 The data is present in the csv format in a file titled hatespeech_labels.csv.
 The file contains Tweet IDs of ~100k tweets used in training and testing the models. These IDs should be sufficient to extract all the data that we need to reproduce the research work.
