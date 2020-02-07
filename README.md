@@ -64,3 +64,7 @@ R packages and versions:
 
 **Disclaimer: For successful replication of the author's code in Python to R, we may need to use additional libraries from R. We will keep this section updated as we progress in the project.
 
+### CONTRIBUTING
+
+We welcome contributions from everyone. Before you get started, please see our contributor guidelines. Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
+
