@@ -15,6 +15,20 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Data import
 
+Importing the raw csv file. The csv file has the following major columns:
+
+1. TweetID
+2. Raw tweet
+3. Label 
+
+```{r}
+df <- read.csv("data/twitter-hate-speech-classifier-data.csv", header = TRUE)
+head(df, n=10)
+```
+
+
+
+
 
 ## Data pre-processing
 
