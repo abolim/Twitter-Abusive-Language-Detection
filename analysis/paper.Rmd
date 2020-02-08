@@ -1,12 +1,24 @@
 ---
-title: "Twitter_hate_speech_replication"
-author: "Mayank, Samarth, Aboli, Harini"
-date: "2/6/2020"
+title: "Replication of Twitter hate speech classification"
+author: "Aboli Moroney, Mayank Goel, Samarth Modi, Harini Ramprasad"
+knit: "bookdown::render_book"
 output: html_document
+# link-citations: yes
+# colorlinks: yes
+# lot: yes
+# lof: yes
+# fontsize: 12pt
+# monofont: "Source Code Pro"
+# monofontoptions: "Scale=0.7"
+# site: bookdown::bookdown_site
+# #description: "A guide to authoring books with R Markdown, including how to generate figures and tables, and insert "
+# url: 'https\://bookdown.org/yihui/bookdown/'
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::read_chunk('001-tweet-cleaning.R')
 ```
 
 ## Introduction
@@ -27,13 +39,12 @@ Importing the raw csv file. The csv file has about 30 columns. However, we would
 3. does_this_tweet_contain_hate_speech - (label with 3 different classes)
 
 
-```{r}
-df <- read.csv("../data/twitter-hate-speech-classifier-data.csv", header = TRUE)
-
+```{r Input-Data, echo=FALSE, results='hide', include=FALSE}
 #Keeping only the necessary columns
-df = df[c("tweet_id", "tweet_text", "does_this_tweet_contain_hate_speech")]
-print(c("total number of tweets", dim(df)[1]))
-head(df)
+#raw_data = raw_data[c("tweet_id", "tweet_text", "does_this_tweet_contain_hate_speech")]
+#print(c("total number of tweets", dim(raw_data)[1]))
+#head(raw_data)
+data.frame(raw_data$does_this_tweet_contain_hate_speech)
 
 ```
 ## Tweet classification
@@ -45,7 +56,7 @@ Our output label columns consists of 3 different classes as following:
 3. The tweet uses offensive language but not hate speech	
 
 ```{r}
-data.frame(summary(df$does_this_tweet_contain_hate_speech))
+# data.frame(summary(raw_data$does_this_tweet_contain_hate_speech))
 ```
 
 
@@ -54,21 +65,28 @@ data.frame(summary(df$does_this_tweet_contain_hate_speech))
 
 As a first step we would need to clean the tweet_text column.
 This step involves
+
 1. Converting all strings to lower case
 2. Removing the punctuations
 3. Removing the stopgap words
 
-In order to clean the tweets, we are using the 'quanteda' package. 
+ To do so, we are using stringr package.
 
-```{r echo=FALSE}
-knitr::read_chunk('001-tweet-cleaning.R')
+
+
+Here is the quick comparison between raw and cleaned tweets. 
+
+```{r Data-Preparation}
+data.frame(refined_data$tweet_text, refined_data$tweet_clean1)
 ```
 
-```{r cleaning tweets}
-head(cleaned_tweets)
+In order to tokenize the tweets, we are using the 'quanteda' package.
+
+```{r }
+
+#To be fixed Tokenization
+#data.frame(refined_data$tweet_text, refined_data$tweet_clean1)
 ```
-
-
 
 ## Natural Lanaguage Processing
 
