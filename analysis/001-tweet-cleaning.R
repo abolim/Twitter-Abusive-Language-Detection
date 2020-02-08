@@ -1,36 +1,51 @@
-# ---- Cleaning-tweets
-raw_data=read.csv("Data/twitter-hate-speech-classifier-data.csv")
+# ---- Input Data ---#
+
+raw_data <- read.csv("Data/twitter-hate-speech-classifier-data.csv")
+raw_data <- raw_data[c('tweet_text', 'does_this_tweet_contain_hate_speech')]
 raw_data$class <- as.numeric(raw_data$does_this_tweet_contain_hate_speech)
 unique(raw_data$class)
+toString(raw_data$tweet_text) 
 
-install.packages("quanteda")
-library(quanteda)
+#--- Loading Libraries ---#
 
-#Text cleaning
-tweets=raw_data$tweet_text
-tweets=tolower(tweets) 
-tweets=head
+library(stringr) #for data prep
+library(tm) #stop word removal
+library(quanteda) #tokenization
 
-library(tidyverse)    
+#--- Data Preparation ---#
 
-clean_tweets <- function(x) {
-  x %>%
-    str_remove_all(" ?(f|ht)(tp)(s?)(://)(.)[.|/](.)") %>%
-    str_replace_all("&amp;", "and") %>%
-    str_remove_all("[[:punct:]]") %>%
-    str_remove_all("^RT:? ") %>%
-    str_remove_all("@[[:alnum:]]+") %>%
-    str_remove_all("#[[:alnum:]]+") %>%
-    str_replace_all("\\\n", " ") %>%
-    str_to_lower() %>%
-    str_trim("both")
-  gsub('[0-9]+', '', tweets)
-}
-tweets %>% clean_tweets
+tweets = raw_data$tweet_text
+# Remove everything that is not a number or letter
+raw_data$tweet_clean1 <- stringr::str_replace_all(raw_data$tweet_text,"[^@a-zA-Z\\s]", " ")
 
-cleaned_tweets=clean_tweets(tweets)
+# Removing twitter handles
+raw_data$tweet_clean1 <- str_remove_all(raw_data$tweet_clean1,"@[[:alnum:]]*")
 
-#library(tm)
+# Convert tweets to lowercase
+raw_data$tweet_clean1 <- tolower(raw_data$tweet_clean1)
 
-#cleaned_tweets_sw=tm_map(cleaned_tweets, removeWords, stopwords('english'))
-#x<- tokens_select(cleaned_tweets,stopwords(), selection=)
+# Create a list of english stopwords
+sw=stopwords('en')
+
+# Stopword removal
+stopwords = c(stopwords('en'))
+raw_data$tweet_clean1  = removeWords(raw_data$tweet_clean1,stopwords)
+
+# Shrink down to just one white space
+raw_data$tweet_clean1 <- stringr::str_replace_all(raw_data$tweet_clean1,"[\\s]+", " ")
+
+#Tokenization
+#raw_data$tweet_token <- tokens(raw_data$tweet_clean1)
+
+# One hot encoding of tokens
+datadb <- data.frame (
+  Class = raw_data$class,
+  Document = raw_data$tweet_clean1
+)
+
+corpus <- Corpus(VectorSource(datadb$Document))
+dtm <- DocumentTermMatrix(corpus)
+dtm2 <- cbind(datadb$Class, as.matrix(dtm))
+colnames(dtm2) <- c("Classification", colnames(dtm))
+head(dtm2, 2)
+ncol(dtm2)
