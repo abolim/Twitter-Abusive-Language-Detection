@@ -1,6 +1,6 @@
 ## DATA DETAILS
 
-# Original Data
+### Original Data
 
 The original data used for this replication project can be found in the folder DATA as **'twitter-hate-speech-classifier-data.csv'**
 URL: https://github.com/abolim/Reproducibility-Research-Replication/tree/master/Data
@@ -16,7 +16,7 @@ The file contains Tweet IDs of approximately 100k tweets used in training and te
  
 Additionally, the owners of the data are open to sharing the full extracted data file upon request via email to a.m.founta@gmail.com
 
-# Prepared Dataset for Replication
+### Prepared Dataset for Replication
 
 For our replication project, we have selected the first 3000 tweets from twitter-hate-speech-classifier-data.csv. This selection has been made after several attempts to process the data on a local machine with limited processing power.
 The **'prepared_tweet_dataset.csv'** is the processed file which is an input to the 002-modeling.R code in Analysis folder. This contains the one-hot encoded data for the selected 3000 tweets which is an input to run the machine learning models.
