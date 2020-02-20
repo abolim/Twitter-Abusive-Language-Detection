@@ -39,12 +39,13 @@ Importing the raw csv file. The csv file has about 30 columns. However, we would
 3. does_this_tweet_contain_hate_speech - (label with 3 different classes)
 
 
-```{r Input-Data, echo=FALSE, results='hide', include=FALSE}
+```{r raw-data-analysis, echo=FALSE, include=TRUE}
 #Keeping only the necessary columns
-#raw_data = raw_data[c("tweet_id", "tweet_text", "does_this_tweet_contain_hate_speech")]
-#print(c("total number of tweets", dim(raw_data)[1]))
-#head(raw_data)
-data.frame(raw_data$does_this_tweet_contain_hate_speech)
+library(here)
+raw_data <- read.csv(here("Data","twitter-hate-speech-classifier-data.csv"))
+raw_data = raw_data[c("tweet_id", "tweet_text", "does_this_tweet_contain_hate_speech")]
+print(c("total number of tweets", dim(raw_data)[1]))
+head(raw_data)
 
 ```
 ## Tweet classification
@@ -56,7 +57,7 @@ Our output label columns consists of 3 different classes as following:
 3. The tweet uses offensive language but not hate speech	
 
 ```{r}
-# data.frame(summary(raw_data$does_this_tweet_contain_hate_speech))
+data.frame(summary(raw_data$does_this_tweet_contain_hate_speech))
 ```
 
 
