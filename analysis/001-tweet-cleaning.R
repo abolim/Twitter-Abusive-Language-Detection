@@ -6,8 +6,8 @@ raw_data <- raw_data[c('tweet_text', 'does_this_tweet_contain_hate_speech', 'twe
 raw_data <- raw_data[1:3000,]
 # Converting classification to numeric values
 raw_data$class <- as.numeric(raw_data$does_this_tweet_contain_hate_speech)
-unique(raw_data$class) #checking values
-toString(raw_data$tweet_text) #converting tweets to text class
+# unique(raw_data$class) #checking values
+# toString(raw_data$tweet_text) #checking tweets
 
 
 ## ---- Loading-Libraries
@@ -44,10 +44,10 @@ corpus <- Corpus(VectorSource(datadb$Document))
 dtm <- DocumentTermMatrix(corpus)
 dtm2 <-  cbind(datadb$Class, as.matrix(dtm))
 colnames(dtm2) <- c("Classification", colnames(dtm))
-# dtm2[1:5, 1:5] #Quality check
+#dtm2[1:5, 1:5] #Quality check
 
 ## ---- Output-Data
 
-#Writing document-term-matrix into csv file
-write.csv(dtm2, "prepared_tweet_dataset.csv")
+#Saving prepared dataset as a csv file in Data folder
+write.csv(dtm2, "../Data/prepared_tweet_dataset.csv")
 
