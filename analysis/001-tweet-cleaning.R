@@ -49,5 +49,6 @@ colnames(dtm2) <- c("Classification", colnames(dtm))
 ## ---- Output-Data
 
 #Saving prepared dataset as a csv file in Data folder
-write.csv(dtm2, "../Data/prepared_tweet_dataset.csv")
+write.csv(dtm2, "Data/prepared_tweet_dataset.csv")
+
 
