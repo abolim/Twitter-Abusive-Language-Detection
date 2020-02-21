@@ -2,8 +2,16 @@
 
 raw_data <- read.csv("Data/twitter-hate-speech-classifier-data.csv")
 raw_data <- raw_data[c('tweet_text', 'does_this_tweet_contain_hate_speech', 'tweet_id')]
-# Filtering first 3000 rows due to limited computational capacity
-raw_data <- raw_data[1:3000,]
+
+# Filtering random 3000 tweets due to limited computational capacity
+set.seed(123)
+shuffled_row <- sample(nrow(raw_data))
+shuffled_row <- shuffled_row[1:3000]
+raw_data <- raw_data[shuffled_row,] #shuffle dataset
+
+# Saving sampled dataset to Data folder
+write.csv(raw_data, "Data/sampled_tweet_dataset.csv")
+
 # Converting classification to numeric values
 raw_data$class <- as.numeric(raw_data$does_this_tweet_contain_hate_speech)
 # unique(raw_data$class) #checking values
@@ -44,7 +52,10 @@ corpus <- Corpus(VectorSource(datadb$Document))
 dtm <- DocumentTermMatrix(corpus)
 dtm2 <-  cbind(datadb$Class, as.matrix(dtm))
 colnames(dtm2) <- c("Classification", colnames(dtm))
-#dtm2[1:5, 1:5] #Quality check
+# Quality checks on output 
+# dtm2[1:5, 1:5] 
+# nrow(dtm2) 
+# ncol(dtm2)
 
 ## ---- Output-Data
 
