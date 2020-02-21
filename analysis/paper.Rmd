@@ -42,12 +42,15 @@ Importing the raw csv file. The csv file has about 30 columns. However, we would
 ```{r raw-data-analysis, echo=FALSE, include=TRUE}
 #Keeping only the necessary columns
 library(here)
+library(knitr)
 raw_data <- read.csv(here("Data","twitter-hate-speech-classifier-data.csv"))
 raw_data = raw_data[c("tweet_id", "tweet_text", "does_this_tweet_contain_hate_speech")]
 print(c("total number of tweets", dim(raw_data)[1]))
-head(raw_data)
-
+kable(head(raw_data,10),caption = "raw data")
 ```
+
+
+
 ## Tweet classification
 
 Our output label columns consists of 3 different classes as following:
@@ -58,6 +61,7 @@ Our output label columns consists of 3 different classes as following:
 
 ```{r}
 data.frame(summary(raw_data$does_this_tweet_contain_hate_speech))
+
 ```
 
 
