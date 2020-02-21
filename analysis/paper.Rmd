@@ -60,7 +60,7 @@ Our output label columns consists of 3 different classes as following:
 3. The tweet uses offensive language but not hate speech	
 
 ```{r}
-(data.frame(summary(raw_data$does_this_tweet_contain_hate_speech)))
+data.frame(summary(raw_data$does_this_tweet_contain_hate_speech))
 
 raw_data$class <- as.numeric(raw_data$does_this_tweet_contain_hate_speech)
 
@@ -85,7 +85,7 @@ ggplot(data=bar_data, aes(x= Class, y= Number_of_Tweets)) +
 
 ## Data pre-processing
 
-As we see, we have a total of 14,509 tweets. When we tried to run our processing scripts over this data, we ended up generating huge intermdiate dataframes causing our local devices to hang or break down. Therefore for our replication project, we have selected the first 3000 tweets from the original dataset 'twitter-hate-speech-classifier-data.csv'. This selection has been made after several attempts to process the data on a local machine with limited processing power.
+As we see, we have a total of 14,509 tweets. When we tried to run our processing scripts over this data, we ended up generating huge intermdiate dataframes causing our local devices to hang or break down. Therefore for our replication project, we have taken a random sample of 3000 tweets from the original dataset 'twitter-hate-speech-classifier-data.csv'. This selection has been made after several attempts to process the data on a local machine with limited processing power.
 
 As part of pre-processing, following steps were taken to clean the tweet_text column.
 
@@ -114,12 +114,15 @@ The following code chunk provides a glimpse of a tweet before and after tokeniza
 
 After tokenization, the next step is to encode the tokens using one-hot encoding to generate features. After one-hot encoding the output csv file was stored in the data folder as **'prepared_tweet_dataset.csv'**. This contains the one-hot encoded data for the selected 3000 tweets which is an input to run the machine learning models.
 
-This dataset can be used to bypass the resource intensive pre-processing steps. It can be used to directly train the model and  reproduce the figures that we have claimed to replicate using this project.
+This dataset can be used to bypass the resource intensive pre-processing steps. It can be used to directly train the model and reproduce the figures that we have claimed to replicate using this project.
 
 
-## Modeling
+## Modeling assumptions
 
-We have chosen Logistic Regression
+We have implemented Logistic Regression Classifier out of the 5 different machine learning algorithms used by the authors. We chose logistic regression due to better familiarity and ease of implementation.
+
+Further, we have chosen to replicate only the word-level representation of the original paper. Attempting characeter-level representaion was not feasible given the time and computing power limitations.
+
 
 
 
