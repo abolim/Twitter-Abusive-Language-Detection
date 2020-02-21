@@ -3,6 +3,7 @@ title: "Replication of Twitter hate speech classification"
 author: "Aboli Moroney, Mayank Goel, Samarth Modi, Harini Ramprasad"
 knit: "bookdown::render_book"
 output: html_document
+bibliography: bibliography.bib
 # link-citations: yes
 # colorlinks: yes
 # lot: yes
@@ -53,7 +54,7 @@ kable(head(raw_data,10),caption = "raw data")
 Adding Word Cloud of tweets 
 
 ```{r}
-include_graphics(here("WordCloud.png"))
+include_graphics(here("analysis","WordCloud.png"))
 ```
 
 
@@ -130,6 +131,11 @@ As part of pre-processing, following steps were taken to clean the tweet_text co
 
 Here is the quick comparison between raw and cleaned tweets after pre-processing steps.
 
+```{r Loading-Libraries}
+
+```
+
+
 ```{r Data-Preparation}
 data.frame(refined_data$tweet_text, refined_data$tweet_clean1)
 ```
@@ -183,4 +189,4 @@ We are however observing lower precision and recall values than the claimed valu
 3. Perhaps, the original code itself is not very reproducible and has tendency to generate different results with slight changes.
 
 
-
+## References
