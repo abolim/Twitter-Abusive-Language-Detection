@@ -58,8 +58,6 @@ R packages and versions:
 |dplyr	            |0.8.3|
 |knitr	            |1.28|
 
-**Disclaimer: For successful replication of the author's code in Python to R, we may need to use additional libraries from R. We will keep this section updated as we progress in the project.
-
 ### CONTRIBUTING
 
 We welcome contributions from everyone. Before you get started, please see our contributor guidelines. Please note that this project is released with a [Contributor Code of Conduct](https://github.com/abolim/Reproducibility-Research-Replication/blob/master/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
