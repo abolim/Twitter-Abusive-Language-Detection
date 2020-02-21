@@ -45,22 +45,12 @@ R packages and versions:
 
 |R Package   	    |     Version            |
 |---------------|:-----------------------|
-|keras	         |      2.2.5.0  |
-|reticulate: import(os)|    1.13|
-|argparse	      |  2.0.1|
-|reticulate: import(pickle)	|  1.13|
-|reticulate: import(numpy)	         |  1.13|
-|reticulate: import(warnings)	      |  1.13|
-|dplyr	        |   0.8.3|
-|functools	     |    0.2.0|
-|tensorflow	    |  2.0.0|
 |CARET	       |   6.0-84|
 |future	        |  1.16.0|
-|collections	   |   0.2.3|
-|timeDate	          |  3043.102|
-|lubridate	        |  1.7.4|
+|tm	            |0.7-7|
+|quanteda	            |1.5.2|
+|Liblinear	            |2.10-8|
 |stringr	            |1.4.0|
-|nlp          |   0.2 -0|
 
 **Disclaimer: For successful replication of the author's code in Python to R, we may need to use additional libraries from R. We will keep this section updated as we progress in the project.
 
