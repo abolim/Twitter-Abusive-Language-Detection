@@ -14,6 +14,13 @@ unique(raw_data$class)
 library(tm)
 data<-removePunctuation(to.string(abc$tweet_text))
 
+## Stopword removal
+#removed_words = removeWords(raw_data$tweet_clean1, GradyAugmented)
+#library(qdapDictionaries)
+#is.word= function(x) x %in% GradyAugmented
+#is.word(“aajj”)
+
+
 ## Tokenization Test
 
 # my.text = c("omnis", "homines", "qui", "sese", "student", "praestare", 
@@ -22,6 +29,14 @@ data<-removePunctuation(to.string(abc$tweet_text))
 #             "natura", "prona", "atque", "ventri", "oboedientia", "finxit")
 # delete.stop.words(my.text, stop.words = c("qui", "quae", "ne", "atque"))
 # 
+#removed_words = removeWords(raw_data$tweet_clean1, GradyAugmented)
+#library(qdapDictionaries)
+
+#is.word= function(x) x %in% GradyAugmented
+#is.word(“aajj”)
+
+#raw_data$tweet_token <- tokens(raw_data$tweet_clean1)
+
 
 stopwords = c(stopwords('en'))     #Your stop words file
 x  = raw_data$tweet_text           #Company column data
