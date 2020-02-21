@@ -61,40 +61,45 @@ data.frame(summary(raw_data$does_this_tweet_contain_hate_speech))
 ```
 
 
-
 ## Data pre-processing
 
-As a first step we would need to clean the tweet_text column.
-This step involves
+As we see, we have a total of 14,509 tweets. When we tried to run our processing scripts over this data, we ended up generating huge intermdiate dataframes causing our local devices to hang or break down. Therefore for our replication project, we have selected the first 3000 tweets from the original dataset 'twitter-hate-speech-classifier-data.csv'. This selection has been made after several attempts to process the data on a local machine with limited processing power.
 
-1. Converting all strings to lower case
-2. Removing the punctuations
-3. Removing the stopgap words
+As part of pre-processing, following steps were taken to clean the tweet_text column.
 
- To do so, we are using stringr package.
+1. Converting all strings to lower case - Used base R (tolower function)
+2. Removing the punctuations - Used stringr package 
+3. Removing the stopgap words - Used tm package
 
-
-
-Here is the quick comparison between raw and cleaned tweets. 
+Here is the quick comparison between raw and cleaned tweets after pre-processing steps.
 
 ```{r Data-Preparation}
 data.frame(refined_data$tweet_text, refined_data$tweet_clean1)
 ```
 
-In order to tokenize the tweets, we are using the 'quanteda' package.
+## Tokenization and one-hot encoding
 
-```{r }
+The next step in reproducing is to create features for the model by tokeninzing the tweets. In original python code, the authors have used nltk library. We tried various packages in R which provide tokenization functions. Ultimately, we found that 'quanteda' package in R was most suitable to generate similar tokens as original code. 
+
+The following code chunk provides a glimpse of a tweet before and after tokenization.
+
+```{r tokenization}
 
 #To be fixed Tokenization
 #data.frame(refined_data$tweet_text, refined_data$tweet_clean1)
+
 ```
+
+After tokenization, the next step is to encode the tokens using one-hot encoding to generate features. After one-hot encoding the output csv file was stored in the data folder as **'prepared_tweet_dataset.csv'**. This contains the one-hot encoded data for the selected 3000 tweets which is an input to run the machine learning models.
+
+This dataset can be used to bypass the resource intensive pre-processing steps. It can be used to directly train the model and  reproduce the figures that we have claimed to replicate using this project.
+
 
 ## Natural Lanaguage Processing
 
 
 
 
+
 ## Results
-
-
 
