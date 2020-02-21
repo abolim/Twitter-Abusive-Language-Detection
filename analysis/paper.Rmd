@@ -50,6 +50,14 @@ kable(head(raw_data,10),caption = "raw data")
 ```
 
 
+Adding Word Cloud of tweets 
+
+```{r}
+include_graphics(here("WordCloud.png"))
+```
+
+
+
 
 ## Tweet classification
 
