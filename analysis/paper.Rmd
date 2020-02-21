@@ -60,8 +60,26 @@ Our output label columns consists of 3 different classes as following:
 3. The tweet uses offensive language but not hate speech	
 
 ```{r}
-data.frame(summary(raw_data$does_this_tweet_contain_hate_speech))
+(data.frame(summary(raw_data$does_this_tweet_contain_hate_speech)))
 
+raw_data$class <- as.numeric(raw_data$does_this_tweet_contain_hate_speech)
+
+## Counts by class
+library(dplyr)
+bar_data <- raw_data %>%
+  group_by( class ) %>%
+  tally
+
+names(bar_data) <- c("Class", "Number_of_Tweets")
+bar_data$Class <- as.factor(bar_data$Class)
+#bar_data
+
+## Bar Graph
+library(ggplot2)
+# Change the width of bars
+ggplot(data=bar_data, aes(x= Class, y= Number_of_Tweets)) +
+  geom_bar(stat="identity", color="gray", width=0.5, fill = 'steelblue') + 
+  theme_minimal() 
 ```
 
 
@@ -99,11 +117,24 @@ After tokenization, the next step is to encode the tokens using one-hot encoding
 This dataset can be used to bypass the resource intensive pre-processing steps. It can be used to directly train the model and  reproduce the figures that we have claimed to replicate using this project.
 
 
-## Natural Lanaguage Processing
+## Modeling
+
+We have chosen Logistic Regression
 
 
 
 
 
 ## Results
+
+Here is a snapshot of the original figures claimed by the authors.
+
+** add original numbers here **
+
+We are however observing lower precision and recall values than the claimed values. There could be a number of different factors causing this mismatch in the figures. Some of them are the following:
+
+1. We are using considerablly smaller dataset compared to the authors. This was done due to limited processing power.
+2. While converting the code repository from Python to R, some of the library functions used in R were not exactly the same as those in Python. These small differences in intermediate stages could have inflated the final diference in figures.
+3. Perhaps, the original code itself is not very reproducible and has tendency to generate different results with slight changes.
+
 
