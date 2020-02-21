@@ -158,6 +158,18 @@ We have implemented Logistic Regression Classifier out of the 5 different machin
 
 Further, we have chosen to replicate only the word-level representation of the original paper. Attempting characeter-level representaion was not feasible given the time and computing power limitations.
 
+## Varying Technical Details
+
+### Software
+The original code for the ‘Comparative Studies of Detecting Abusive Language on Twitter’ was written in language Python and also used TensorFlow. For our replication project, we have attempted to reproduce the machine learning model for Logistic Regression in the language R. This involved using different packages and functions in R to process the data as well as build the model and obtain the results.
+
+### Dataset
+Additionally, due to limited computational capacity, we randomly selected 3000 tweets from a dataset of 14,509 tweets from the ‘Hate Speech Dataset’ provided by Twitter. In the original research paper, the authors were able to execute the models with a dataset containing 100k tweets approximately. This was not necessary for us as we were not building the complex neural network models which require large amounts of data.
+
+### Model
+Of the multiple models, we chose to replicate the ‘Logistic Regression’ model using word-level features. This choice was made as the author stated that this model outperformed all the machine learning techniques and had an F1-score which was equivalent to the best CNN model. For our project, we also had limited computational resources due to which execution of other machine learning and deep learning models was out of scope.
+ 
+
 ## Results
 
 Here is a snapshot of the original figures claimed by the authors.
