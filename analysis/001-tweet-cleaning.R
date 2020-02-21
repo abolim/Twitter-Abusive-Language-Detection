@@ -36,11 +36,25 @@ raw_data$tweet_clean1 <- str_remove_all(raw_data$tweet_clean1,"@[[:alnum:]]*")
 raw_data$tweet_clean1 <- tolower(raw_data$tweet_clean1)
 
 # Stopword removal
-stopwords = c(stopwords('en'))
+stopwords = c(stopwords('en'),"https")
 raw_data$tweet_clean1  = removeWords(raw_data$tweet_clean1,stopwords)
 
 # Shrink down to just one white space
 raw_data$tweet_clean1 <- stringr::str_replace_all(raw_data$tweet_clean1,"[\\s]+", " ")
+
+# ---- plot-word-cloud
+plotWordCloud <- function(data = raw_data) {
+  
+  # data <- raw_data
+  
+  wordcloud_data <- data[data$class == 3,]
+  
+  dim(wordcloud_data)
+  
+  source('http://www.sthda.com/upload/rquery_wordcloud.r')
+  filePath <- toString(wordcloud_data$tweet_clean1)
+  res<-rquery.wordcloud(filePath, type ="text", lang = "english")
+}
 
 # One hot encoding of tokens
 datadb <- data.frame (
@@ -60,6 +74,6 @@ colnames(dtm2) <- c("Classification", colnames(dtm))
 ## ---- Output-Data
 
 #Saving prepared dataset as a csv file in Data folder
-write.csv(dtm2, "Data/prepared_tweet_dataset.csv")
+write.csv(dtm2, "Data/prepared_tweet_dataset.csv", row.names = FALSE)
 
 
