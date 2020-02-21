@@ -51,6 +51,12 @@ R packages and versions:
 |quanteda	            |1.5.2|
 |Liblinear	            |2.10-8|
 |stringr	            |1.4.0|
+|here	            |0.1|
+|ggplot2	            |3.2.1|
+|wordcloud	            |2.6|
+|bookdown	            |0.17|
+|dplyr	            |0.8.3|
+|knitr	            |1.28|
 
 **Disclaimer: For successful replication of the author's code in Python to R, we may need to use additional libraries from R. We will keep this section updated as we progress in the project.
 
