@@ -42,6 +42,20 @@ raw_data$tweet_clean1  = removeWords(raw_data$tweet_clean1,stopwords)
 # Shrink down to just one white space
 raw_data$tweet_clean1 <- stringr::str_replace_all(raw_data$tweet_clean1,"[\\s]+", " ")
 
+# ---- plot-word-cloud
+plotWordCloud <- function() {
+  
+  data <- raw_data
+  
+  wordcloud_data <- data[data$class == 3,]
+  
+  dim(wordcloud_data)
+  
+  source('http://www.sthda.com/upload/rquery_wordcloud.r')
+  filePath <- toString(wordcloud_data$tweet_clean1)
+  res<-rquery.wordcloud(filePath, type ="text", lang = "english")
+}
+
 # One hot encoding of tokens
 datadb <- data.frame (
   Class = raw_data$class,

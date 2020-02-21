@@ -16,10 +16,10 @@ plotWordCloud <- function(data) {
   
   ## ---- Loading-Libraries
   
-  library(stringr)    #for data prep
-  library(tm)         #stop word removal
-  library(quanteda)   #tokenization
-  library(wordcloud)  #wordcloud creation
+  library(stringr)    # for data preparation
+  library(tm)         # stop word removal
+  library(quanteda)   # tokenization
+  library(wordcloud)  # wordcloud creation
   
   ## ---- Data-Preparation
   
