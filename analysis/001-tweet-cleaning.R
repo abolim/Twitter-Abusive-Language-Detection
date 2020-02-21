@@ -36,16 +36,16 @@ raw_data$tweet_clean1 <- str_remove_all(raw_data$tweet_clean1,"@[[:alnum:]]*")
 raw_data$tweet_clean1 <- tolower(raw_data$tweet_clean1)
 
 # Stopword removal
-stopwords = c(stopwords('en'))
+stopwords = c(stopwords('en'),"https")
 raw_data$tweet_clean1  = removeWords(raw_data$tweet_clean1,stopwords)
 
 # Shrink down to just one white space
 raw_data$tweet_clean1 <- stringr::str_replace_all(raw_data$tweet_clean1,"[\\s]+", " ")
 
 # ---- plot-word-cloud
-plotWordCloud <- function() {
+plotWordCloud <- function(data = raw_data) {
   
-  data <- raw_data
+  # data <- raw_data
   
   wordcloud_data <- data[data$class == 3,]
   
