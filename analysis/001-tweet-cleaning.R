@@ -42,6 +42,9 @@ raw_data$tweet_clean1  = removeWords(raw_data$tweet_clean1,stopwords)
 # Shrink down to just one white space
 raw_data$tweet_clean1 <- stringr::str_replace_all(raw_data$tweet_clean1,"[\\s]+", " ")
 
+# Saving cleaned dataset
+write.csv(raw_data, "analysis/refined_tweet_dataset.csv", row.names = FALSE)
+
 # ---- plot-word-cloud
 plotWordCloud <- function(data = raw_data) {
   

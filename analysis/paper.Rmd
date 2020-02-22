@@ -9,7 +9,7 @@ bibliography: bibliography.bib
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 #knitr::read_chunk('001-tweet-cleaning.R')
 ```
 
@@ -44,7 +44,7 @@ kable(head(raw_data,7),caption = "Raw data")
 
 ### Tweet classification
 
-In this dataset, the tweets are classfied in the following three classes:
+In this dataset, the tweets are classified in the following three classes:
 
 1. The tweet contains hate speech 
 2. The tweet is not offensive
@@ -52,12 +52,12 @@ In this dataset, the tweets are classfied in the following three classes:
 
 Below is a visual representation of the distribution of tweets by classes.
 
-```{r echo=FALSE}
+```{r echo = FALSE}
 d <- data.frame(summary(raw_data$does_this_tweet_contain_hate_speech))
 names(d) <- c('Number of Tweets')
 print(d)
 raw_data$class <- as.numeric(raw_data$does_this_tweet_contain_hate_speech)
-source(here("analysis","004-display-bargraph.R"))
+source(here("analysis","003-display-bargraph.R"))
 plotBarGraph(raw_data)
 ```
 
@@ -74,54 +74,56 @@ The original dataset contained 14,509 tweets. When we tried to run our processin
 
 Below is a visual representation of the distribution of tweets by classes for the sampled dataset.
 
-```{r}
+```{r echo = FALSE}
 
 sampled_data <- read.csv(here("Data","sampled_tweet_dataset.csv"))
 d <- data.frame(summary(sampled_data$does_this_tweet_contain_hate_speech))
 names(d) <- c('Number of Tweets')
 print(d)
 sampled_data$class <- as.numeric(sampled_data$does_this_tweet_contain_hate_speech)
-source(here("analysis","004-display-bargraph.R"))
+source(here("analysis","003-display-bargraph.R"))
 plotBarGraph(sampled_data)
 
 ```
 
 
-As part of pre-processing, following steps were taken to clean the 'tweet_text' column.
+As part of pre-processing, the following steps were taken to clean the 'tweet_text' column.
 
 1. Converted all strings to lower case - Used base R (tolower function)
-2. Removed everything that is not a numner or alphabet - using stringr package 
+2. Removed everything that is not a number or alphabet - using stringr package 
 3. Removed punctuations, special characters, twitter handles, emojis  - using stringr package 
 4. Removed most frequent 200 stopgap words - using tm package
 
 Here is the quick comparison between raw and cleaned tweets after pre-processing steps.
 
-```{r Loading-Libraries, echo=FALSE}
-
+```{r Loading-Libraries, echo = FALSE}
 ```
 
-
-```{r Data-Preparation, echo=FALSE}
-#data.frame(refined_data$tweet_text, refined_data$tweet_clean1)
+```{r Data-Preparation, echo = FALSE}
+refined_data <- read.csv(here("analysis","refined_tweet_dataset.csv"))
+#data.frame(refined_data$tweet_text[1:5], refined_data$tweet_clean1[1:5])
+kable(refined_data[1:5,c('tweet_text', 'tweet_clean1')])
 ```
 
-## Tokenization and one-hot encoding
+### Tokenization and one-hot encoding
 
-The next step in reproducing is to create features for the model by tokeninzing the tweets. In original python code, the authors have used nltk library. We tried various packages in R which provide tokenization functions. Ultimately, we found that 'quanteda' package in R was most suitable to generate similar tokens as original code. 
+The next step in reproducing is to create features for the model by tokenizing the tweets. In the original python code, the authors have used nltk library. We tried various packages in R which provide tokenization functions. Ultimately, we found that the 'quanteda' package in R was most suitable to generate similar tokens as original the code. 
 
-The following code chunk provides a glimpse of a tweet before and after tokenization.
+After tokenization, the next step is to encode the tokens using one-hot encoding to generate features. After one-hot encoding the output csv file was stored in the data folder as **'prepared_tweet_dataset.csv'**. This dataset contains 3,000 tweets and 7,237 features generated. This contains the one-hot encoded data for the selected 3000 tweets which is an input to run the machine learning model. 
+
+Below is a snapshot for a few rows and columns from this dataset.
 
 ```{r tokenization}
 
-#To be fixed Tokenization
-#data.frame(refined_data$tweet_text, refined_data$tweet_clean1)
+model_data <- read.csv(here("Data","prepared_tweet_dataset.csv"))
+#data.frame(refined_data$tweet_text[1:5], refined_data$tweet_clean1[1:5])
+kable(model_data[1:7,1:10])
 
 ```
 
-After tokenization, the next step is to encode the tokens using one-hot encoding to generate features. After one-hot encoding the output csv file was stored in the data folder as **'prepared_tweet_dataset.csv'**. This contains the one-hot encoded data for the selected 3000 tweets which is an input to run the machine learning models.
-
 This dataset can be used to bypass the resource intensive pre-processing steps. It can be used to directly train the model and reproduce the figures that we have claimed to replicate using this project.
 
+### Modeling
 
 ## Reproducibility
 
@@ -129,34 +131,43 @@ This dataset can be used to bypass the resource intensive pre-processing steps. 
 The original code for the ‘Comparative Studies of Detecting Abusive Language on Twitter’ was written in language Python and also used TensorFlow. For our replication project, we have attempted to replicate the machine learning model for Logistic Regression in the R language. This involved using different packages and functions in R to process the data as well as build the model and obtain the results.
 
 ### Dataset
-Additionally, due to limited computational capacity, we randomly selected 3000 tweets from a dataset of 14,509 tweets from the ‘[Hate Speech Dataset] (https://github.com/ENCASEH2020/hatespeech-twitter)’ provided by ENCASE. In the original research paper, the authors were able to execute the models with a dataset containing 100k tweets approximately. This was not necessary for us as we were not building the complex neural network models which require large amounts of data.
+Additionally, due to limited computational capacity, we randomly selected 3000 tweets from a dataset of 14,509 tweets from the ‘[Hate Speech Dataset] (https://github.com/ENCASEH2020/hatespeech-twitter)’ provided by ENCASE. In the original research paper, the authors were able to execute the models with a dataset containing approximately 100,000 tweets. This was not necessary for us as we were not building the complex neural network models which require large amounts of data.
 
 ### Model
-The original paper had a compariative study of 5 different machine learning and deep learning algorithms. However, for our replication purpose we have chosen ‘Logistic Regression’ model using word-level features. This choice was made as the author stated that this model outperformed all the machine learning techniques and had an F1-score which was equivalent to the best CNN model. For our project, we also had limited computational resources due to which execution of other machine learning and deep learning models was out of scope. 
+The original paper had a comparative study of 5 different machine learning and deep learning algorithms. However, for our replication purpose we have chosen ‘Logistic Regression’ model using word-level features. This choice was made as the author stated that this model outperformed all the machine learning techniques and had an F1-score which was equivalent to the best CNN model. For our project, we also had limited computational resources due to which execution of other machine learning and deep learning models was out of scope. 
 
-Further, the original paper modeled all algorithms at word and character level separately. But, they stated that character levels models reduced the accuracy for hate and abusive speech data. Therefore, we have chosen only the word-level representation for our replication study. 
+Further, the original paper modeled all algorithms at word and character levels separately. But, they stated that character levels models reduced the accuracy for hate and abusive speech data. Therefore, we have chosen only the word-level representation for our replication study. 
  
 
 ## Results
 
-Here is a snapshot of the original figures claimed by the authors.
+Here is a quick comparison of the original figures produced by the authors against our replicated results. We observe that there is a moderate gap between the original and replicated figures.
 
-** add original numbers here **
+```{r echo=FALSE}
+metrics <- read.csv(here("analysis","metrics.csv"))
+original_metrics <- read.csv(here("analysis","original_metrics.csv"))
+kable(metrics, caption = "Replicated metrics")
+kable(original_metrics, caption = "Original metrics")
+```
 
 
 ## Conclusion
 
-We are however observing lower precision and recall values than the claimed values. There could be a number of different factors causing this mismatch in the figures. Some of them are the following:
+We are however observing lower precision, recall, and F-1 values than the claimed values. There could be a number of different factors causing this mismatch in the figures. Some of them are as follows:
 
-1. We are using considerablly smaller dataset compared to the authors. This was done due to limited processing power.
-2. While converting the code repository from Python to R, some of the library functions used in R were not exactly the same as those in Python. These small differences in intermediate stages could have inflated the final diference in figures.
-3. Perhaps, the original code itself is not very reproducible and has tendency to generate different results with slight changes.
-
+1. We are using a considerably smaller dataset as compared to the authors. This was done due to limited processing power.
+2. While converting the code repository from Python to R, some of the library functions used in R were not exactly the same as those in Python. These small differences in intermediate stages could have inflated the final difference in figures.
+3. Perhaps, the original code itself is not very reproducible and has a tendency to generate different results with slight changes.
+4. The original paper was done on a large scale and focused intensively on feature engineering whereas we completed feature engineering as thoroughly as we could with the available R libraries, but not to the same degree as that of the original paper.
 
 ## Acknowledgements
 
-We would like to thank Prof. Ben Marwick for his indiscriminate support throughout our endeavor to reproduce the results of the original paper. We are also grateful to our teaching instructor Liying Wang, who was helpful in guiding us to success in this project. We are also thankful to the developers and maintainers of the R libraries that helped us reproduce the results. Lastly, we thank our peer evaluators, who will review our work for very valuable feedback..
+We would like to thank Prof. Ben Marwick for his indiscriminate support throughout our endeavor to reproduce the results of the original paper. We are also grateful to our teaching instructor Liying Wang, who was helpful in guiding us to success in this project. We are also thankful to the developers and maintainers of the R libraries that helped us reproduce the results. Lastly, we thank our peer evaluators, who will review our work for very valuable feedback.
 
 
-## References
+## References 
+
+1. @founta2018large
+2. @DBLP:journals/corr/abs-1808-10245
+
 
