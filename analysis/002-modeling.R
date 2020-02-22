@@ -54,25 +54,25 @@ confusion=table(test_y, predicted)
 dim(confusion)
 
 #Calculating model accuracy
-accuracy=sum(diag(confusion))/sum(confusion)
+accuracy=round(sum(diag(confusion))/sum(confusion),digits=3)
 accuracy
 
 #Calculating model precision
-precision=diag(confusion)/rowSums(confusion)
+precision=round(diag(confusion)/rowSums(confusion),digits=3)
 precision=as.array(precision)
-total_model_precision=mean(precision)
+total_model_precision=round(mean(precision),digits=3)
 total_model_precision
 
 #Calculating model recall
-recall=diag(confusion)/colSums(confusion)
+recall=round(diag(confusion)/colSums(confusion),digits=3)
 recall=as.array(recall)
-total_model_recall=mean(recall)
+total_model_recall=round(mean(recall),digits=3)
 total_model_recall
 
 #Calculating model F1 score
-f1=(2*precision*recall)/(precision+recall)
+f1=round((2*precision*recall)/(precision+recall),digits=3)
 f1=as.array(f1)
-total_model_f1=mean(f1)
+total_model_f1=round(mean(f1),digits=3)
 total_model_f1
 
 #Metrics dataframe production
