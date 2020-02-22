@@ -41,7 +41,7 @@ GitHub username, and links to relevant issue(s)/PR(s).
 ### Code of Conduct
 
 Please note that the Reproducibility-Research-Replication project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this
+[Contributor Code of Conduct](https://github.com/abolim/Reproducibility-Research-Replication/blob/master/CODE_OF_CONDUCT.md). By contributing to this
 project you agree to abide by its terms.
 
 ### See tidyverse [development contributing guide](https://rstd.io/tidy-contrib)
