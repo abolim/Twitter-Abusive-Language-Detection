@@ -126,6 +126,7 @@ The above dataset can be used to bypass the resource intensive pre-processing st
 The modeling script can be found in [002-modeling.R](https://github.com/abolim/Reproducibility-Research-Replication/tree/master/analysis)
 
 
+
 ## Reproducibility
 
 ### Software
@@ -139,6 +140,14 @@ The original paper had a comparative study of 5 different machine learning and d
 
 Further, the original paper modeled all algorithms at word and character levels separately. But, they stated that character levels models reduced the accuracy for hate and abusive speech data. Therefore, we have chosen only the word-level representation for our replication study. 
  
+## Points Worth Noting 
+
+There are certain other factors to keep in mind when it comes to detecting abusive text on social media. Alot of the abusive text online tends to go undetected because of the context relative, sarcastic, subjective nature of this text. Some tweets can be classified as objectively abusive. However there are alot of situations wherein that nuance is gone undetected. These are some glaring pitfalls of detecting abusive and hateful language online. Most neural network models are being trained to circumvent these drawbacks. However, since our model performs logistic regression, it is important to note that these concerns could not be addressed as thoroughly. 
+
+Our model used the Liblinear package for logistic regression. The documentation for this package stated that their given logistic model performed both L1 as well as L2 regularization for better model generalization. Our original paper utilized only L2 regularization. Additionally, the original paper used the BFGS optimization technique. However, upon further investigation into R packages, we were unable to find a library that allowed an equivalent implementation of BFGS. Since our research suggested that Liblinear was a state-of-the-art model for logistic regression, we settled for using this library. 
+
+Furthermore, our model used a direct one-hot encoding of the tokenized tweets as features to input into our logistic regression model. However, in the original paper, the authors have used both a one-hot encoding, as well as a tf-idf (term frequency-inverse document frequency) scheme of feature engineering. This was done using n-grams and fed for each classifier. Initially, it was in our agenda to also implement this methodology. However due to time constraints, we decided against this additional implementation.
+
 
 ## Results
 
@@ -159,7 +168,7 @@ kable(metrics, caption = "Replicated metrics")
 
 We observed lower precision, recall, and f1-scores as compared to the original study. There could be a number of different factors causing this difference in the results. Some of them are as follows:
 
-1. We are using a considerably smaller dataset as compared to the original one. This was a compromise we settled for due to limited processing power.
+1.We realize that since we have only taken 3,000 tweets to perform our analysis (due to limited computational resources), there is a chance for underfitting in our model. This could be a reason that our results show lower values for most metrics when compared to the original paper.
 2. While converting the code repository from Python to R, some of the library functions used in R were not exactly the same as those in Python. These small differences in intermediate stages could have inflated the final difference in figures.
 3. Perhaps, the original code itself is not very reproducible and has a tendency to generate different results with slight changes.
 4. The original paper was done on a large scale and focused intensively on feature engineering whereas we completed feature engineering as thoroughly as we could with the available R libraries, but not to the same degree as that of the original paper.
