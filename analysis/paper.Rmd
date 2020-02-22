@@ -145,7 +145,7 @@ Further, the original paper modeled all algorithms at word and character levels 
 Here is a quick comparison of the original figures produced by the authors against our replicated results. We observe that there is a moderate gap between the original and replicated figures.
 
 ```{r echo=FALSE}
-metrics <- read.csv(here("analysis","metrics.csv"))
+metrics <- read.csv(here("analysis","replication_metrics.csv"))
 original_metrics <- read.csv(here("analysis","original_metrics.csv"))
 
 kable(original_metrics, caption = "Original metrics")
