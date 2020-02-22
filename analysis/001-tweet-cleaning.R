@@ -56,6 +56,8 @@ plotWordCloud <- function(data = raw_data) {
   res<-rquery.wordcloud(filePath, type ="text", lang = "english")
 }
 
+# The word cloud image generated from the above function has been saved in the analysis folder
+
 # One hot encoding of tokens
 datadb <- data.frame (
   Class = raw_data$class,
