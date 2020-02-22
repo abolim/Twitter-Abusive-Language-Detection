@@ -81,7 +81,7 @@ metrics=data.frame("Classification" = c("Hateful","Not offensive","Offensive, no
 metrics
 
 #Write metrics as CSV into analysis 
-write.csv(metrics,"analysis/metrics.csv",row.names = FALSE)
+write.csv(metrics,"analysis/replication_metrics.csv",row.names = FALSE)
 
 
 
