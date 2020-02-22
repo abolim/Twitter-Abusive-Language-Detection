@@ -1,0 +1,5 @@
+Classification,Precision,Recall,F1.score,Accuracy
+Hateful,0.62,0.161,0.254,NA
+Not offensive,0.807,0.933,0.865,NA
+"Offensive, not hateful",0.868,0.844,0.856,NA
+Overall,0.786,0.802,0.78,NA
