@@ -80,7 +80,8 @@ metrics=data.frame("Classification" = c("Hateful","Not offensive","Offensive, no
   "Precision" = c(precision,total_model_precision), "Recall" = c(recall,total_model_recall), "F1 score" = c(f1,total_model_f1),"Accuracy"= (accuracy))
 metrics
 
-
+#Write metrics as CSV into analysis 
+write.csv(metrics,"analysis/metrics.csv",row.names = FALSE)
 
 
 
