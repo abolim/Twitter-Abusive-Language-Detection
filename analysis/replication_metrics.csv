@@ -1,0 +1,5 @@
+"Classification","Precision","Recall","F1.score","Accuracy"
+"Hateful",0.341,0.423,0.378,0.75
+"Not offensive",0.955,0.851,0.9,0.75
+"Offensive, not hateful",0.641,0.701,0.67,0.75
+"Overall",0.646,0.658,0.649,0.75
