@@ -39,7 +39,7 @@ library(here)
 library(knitr)
 raw_data <- read.csv(here("Data","twitter-hate-speech-classifier-data.csv"))
 raw_data = raw_data[c("tweet_id", "tweet_text", "does_this_tweet_contain_hate_speech")]
-kable(head(raw_data,7),caption = "Raw data")
+kable(head(raw_data,7),caption = "Table 1: Raw tweets from original dataset")
 ```
 
 
@@ -59,7 +59,7 @@ plotBarGraph(raw_data)
 To get a better idea of the sentiments behind tweets, we used the R package 'WordCloud', which generates a word cloud of the most frequent words in the given tweets. 
 
 
-```{r word-cloud-using-function-call}
+```{r word-cloud-using-function-call, fig.cap = "Figure 1: Wordcloud of most frequent words in tweets"}
 include_graphics(here("analysis","WordCloud.png"))
 ```
 
@@ -99,7 +99,7 @@ Here is the quick comparison between raw and cleaned tweets after pre-processing
 ```{r Data-Preparation, echo = FALSE}
 refined_data <- read.csv(here("analysis","refined_tweet_dataset.csv"))
 #data.frame(refined_data$tweet_text[1:5], refined_data$tweet_clean1[1:5])
-kable(refined_data[1:5,c('tweet_text', 'tweet_clean1')])
+kable(refined_data[1:5,c('tweet_text', 'tweet_clean1')], caption = "Table 2: Refined dataset with cleaned tweets")
 ```
 
 This [refined_tweet_dataset.csv](https://github.com/abolim/Reproducibility-Research-Replication/tree/master/analysis) can be generated using the R code
@@ -117,7 +117,7 @@ Below is a snapshot for a few rows and columns from this dataset.
 
 model_data <- read.csv(here("analysis","prepared_tweet_dataset.csv"))
 #data.frame(refined_data$tweet_text[1:5], refined_data$tweet_clean1[1:5])
-kable(model_data[1:7,1:10])
+kable(model_data[1:7,1:10], caption = "Table 3: Prepared dataset with tokenized features")
 
 ```
 
@@ -153,9 +153,9 @@ Here is a quick comparison of the original figures produced by the authors again
 metrics <- read.csv(here("analysis","replication_metrics.csv"))
 original_metrics <- read.csv(here("analysis","original_metrics.csv"))
 
-kable(original_metrics, caption = "Original metrics")
+kable(original_metrics, caption = "Table 4: Original metrics")
 
-kable(metrics, caption = "Replicated metrics")
+kable(metrics, caption = "Table 5: Replicated metrics")
 
 ```
 
