@@ -15,9 +15,9 @@ Additionally, the owners of the data are open to sharing the full extracted data
 
 ### Sampled Dataset for Replication
 
-For our replication project, we have selected a random subset of 3000 tweets from twitter-hate-speech-classifier-data.csv. This selection has been made after several attempts to process all of the data on a local machine with limited processing power. File **'sampled_tweet_dataset.csv'** contains the subset of size 3000 tweets from the original data that we use for replicating this project.
+For our replication project, we have selected a random subset of 3000 tweets from twitter-hate-speech-classifier-data.csv. This selection has been made after several attempts to process all of the data on a local machine with limited processing power. **'sampled_tweet_dataset.csv'** data file contains the subset of size 3000 tweets from the original data that we use for replicating this project.
 
 
 ### Prepared Dataset for Replication
 
-File **'prepared_tweet_dataset.csv'** is the processed file which is an input to the 002-modeling.R code in the Analysis folder. This data file contains one-hot encoded data for the selected 3000 tweets which serves as an input to run the machine learning models. This dataset should be used to produce the figures that we have claimed to replicate using this project.
+**'prepared_tweet_dataset.csv'** data file is the processed file which is an input to the 002-modeling.R code in the Analysis folder. This data file contains one-hot encoded data for the selected 3000 tweets which serves as an input to run the machine learning models. This dataset should be used to produce the figures that we have claimed to replicate using this project.
