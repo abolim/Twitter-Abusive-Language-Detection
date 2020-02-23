@@ -39,9 +39,10 @@ URL: https://github.com/abolim/Reproducibility-Research-Replication/tree/master/
 
 ### DEPENDENCIES
 
-OS type and version: 
-Windows 10 Pro, Version 1903, OS build 18362.535
+OS type and version: Windows 10 Pro, Version 1903, OS build 18362.535
+
 System type: 64-bit OS, x64-based processor
+
 R version: >=3.6.2
 
 R packages and versions:
