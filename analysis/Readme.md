@@ -18,4 +18,6 @@ This R script reads "prepared_tweet_dataset.csv" data file as input, which was g
 
 This R script is used to generate a bar graph showing the distribution of the tweets in the three hateful categories.
 
+### Other files
+
 All the other files in this directory are intermediate files which are generated and/or used to reproduce the results.
