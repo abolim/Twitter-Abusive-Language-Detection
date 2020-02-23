@@ -73,7 +73,7 @@ Below is a visual representation of the distribution of tweets by classes for th
 
 ```{r echo = FALSE}
 
-sampled_data <- read.csv(here("Data","sampled_tweet_dataset.csv"))
+sampled_data <- read.csv(here("analysis","sampled_tweet_dataset.csv"))
 d <- data.frame(summary(sampled_data$does_this_tweet_contain_hate_speech))
 names(d) <- c('Number of Tweets')
 print(d)
@@ -115,7 +115,7 @@ Below is a snapshot for a few rows and columns from this dataset.
 
 ```{r tokenization}
 
-model_data <- read.csv(here("Data","prepared_tweet_dataset.csv"))
+model_data <- read.csv(here("analysis","prepared_tweet_dataset.csv"))
 #data.frame(refined_data$tweet_text[1:5], refined_data$tweet_clean1[1:5])
 kable(model_data[1:7,1:10])
 

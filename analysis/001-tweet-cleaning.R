@@ -10,7 +10,7 @@ shuffled_row <- shuffled_row[1:3000]
 raw_data <- raw_data[shuffled_row,] #shuffle dataset
 
 # Saving sampled dataset to Data folder
-write.csv(raw_data, "Data/sampled_tweet_dataset.csv")
+write.csv(raw_data, "analysis/sampled_tweet_dataset.csv")
 
 # Converting classification to numeric values
 raw_data$class <- as.numeric(raw_data$does_this_tweet_contain_hate_speech)
@@ -79,6 +79,6 @@ colnames(dtm2) <- c("Classification", colnames(dtm))
 ## ---- Output-Data
 
 #Saving prepared dataset as a csv file in Data folder
-write.csv(dtm2, "Data/prepared_tweet_dataset.csv", row.names = FALSE)
+write.csv(dtm2, "analysis/prepared_tweet_dataset.csv", row.names = FALSE)
 
 
