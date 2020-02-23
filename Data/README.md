@@ -2,7 +2,8 @@
 
 ### Original Data
 
-The original data used for this replication project can be in this directory as **'twitter-hate-speech-classifier-data.csv'**
+The original data used for this replication project can be found in this directory as **'twitter-hate-speech-classifier-data.csv'**
+
 URL: https://github.com/abolim/Reproducibility-Research-Replication/tree/master/Data
 
 The link to the exact data used in the research is mentioned in the GitHub page by the authors.
