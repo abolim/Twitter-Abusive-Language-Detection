@@ -1,6 +1,6 @@
 ## ---- Input-Data
 
-raw_data <- read.csv("Data/twitter-hate-speech-classifier-data.csv")
+raw_data <- read.csv(here("Data","twitter-hate-speech-classifier-data.csv"))
 raw_data <- raw_data[c('tweet_text', 'does_this_tweet_contain_hate_speech', 'tweet_id')]
 
 # Filtering random 3000 tweets due to limited computational capacity
