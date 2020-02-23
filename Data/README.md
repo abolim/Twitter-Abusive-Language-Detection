@@ -14,11 +14,4 @@ The raw data is available in csv format in a file titled hatespeech_labels.csv. 
  
 Additionally, the owners of the data are open to sharing the full extracted data file upon request via email to a.m.founta@gmail.com
 
-### Sampled Dataset for Replication
 
-For our replication project, we have selected a random subset of 3000 tweets from twitter-hate-speech-classifier-data.csv. This selection has been made after several attempts to process all of the data on a local machine with limited processing power. **'sampled_tweet_dataset.csv'** data file contains the subset of size 3000 tweets from the original data that we use for replicating this project.
-
-
-### Prepared Dataset for Replication
-
-**'prepared_tweet_dataset.csv'** data file is the processed file which is an input to the 002-modeling.R code in the Analysis folder. This data file contains one-hot encoded data for the selected 3000 tweets which serves as an input to run the machine learning models. This dataset should be used to produce the figures that we have claimed to replicate using this project.
