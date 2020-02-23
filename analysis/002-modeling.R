@@ -1,7 +1,7 @@
 
 ## ---- Input-Data
 
-dtm2 <- read.csv("Data/prepared_tweet_dataset.csv")
+dtm2 <- read.csv(here("analysis", "prepared_tweet_dataset.csv"))
 
 ## ---- Loading-Libraries
 

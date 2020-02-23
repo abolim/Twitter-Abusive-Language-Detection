@@ -69,7 +69,7 @@ include_graphics(here("analysis","WordCloud.png"))
 The original dataset contains 14,509 tweets and can be found in the 'Data' folder as [twitter-hate-speech-classifier-data.csv](https://github.com/abolim/Reproducibility-Research-Replication/tree/master/Data) in our repository. When we executed our data processing scripts using this data, we generated a huge intermediate modeling dataset which could not be processed using our local machines due to memory and hardware constraints. 
 Therefore for our replication study, we have taken a random sample of 3000 tweets from the original dataset, which reasonably represents the original distribution of classes.
 
-Below is a visual representation of the distribution of tweets by classes for this sampled dataset which can be found in the 'Data'folder in our repository as [sampled_tweet_dataset.csv](https://github.com/abolim/Reproducibility-Research-Replication/tree/master/Data). The R code used to generate this dataset can be found in [001-tweet-cleaning.R](https://github.com/abolim/Reproducibility-Research-Replication/tree/master/analysis)
+Below is a visual representation of the distribution of tweets by classes for this sampled dataset which can be found in the 'analysis' folder in our repository as [sampled_tweet_dataset.csv](https://github.com/abolim/Reproducibility-Research-Replication/tree/master/aanalysis). The R code used to generate this dataset can be found in [001-tweet-cleaning.R](https://github.com/abolim/Reproducibility-Research-Replication/tree/master/analysis)
 
 ```{r echo = FALSE}
 
@@ -154,7 +154,11 @@ metrics <- read.csv(here("analysis","replication_metrics.csv"))
 original_metrics <- read.csv(here("analysis","original_metrics.csv"))
 
 kable(original_metrics, caption = "Table 4: Original metrics")
+```
 
+<br>
+
+```{r echo=FALSE}
 kable(metrics, caption = "Table 5: Replicated metrics")
 
 ```
