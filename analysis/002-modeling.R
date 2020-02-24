@@ -1,6 +1,5 @@
-
 ## ---- Input-Data
-
+library(here)
 dtm2 <- read.csv(here("analysis", "prepared_tweet_dataset.csv"))
 
 ## ---- Loading-Libraries
@@ -28,6 +27,7 @@ test <- dtm2[-train_ind, ]
 # dim(train) #quality check
 
 #Splitting training set into independent (x) and dependent (y) variables
+# Dependent variable (y) is Classification
 train_x = train[,2:ncol(train)]
 train_y = train[,1:1]
 
@@ -36,14 +36,15 @@ test_x = test[,2:ncol(test)]
 test_y = test[,1:1]
 
 # dim(test_x) #quality check
-head(test_y) #quality check
+#head(test_y) #quality check
 
 ## ---- Running-the-Model
 
 # Fitting the logistic regression model using training data
 model_logistic=LiblineaR(data=train_x,target=train_y,
                          type=7,bias=TRUE,verbose=FALSE)
-# Predicting y-values on test data
+
+# Predicting y-values (classification) on test data
 p=predict(model_logistic,test_x)
 predicted <- p$predictions
 
@@ -51,7 +52,7 @@ predicted <- p$predictions
 
 #Creating confusion matrix for predicted values
 confusion=table(test_y, predicted)
-dim(confusion)
+#dim(confusion) #quality check
 
 #Calculating model accuracy
 accuracy=round(sum(diag(confusion))/sum(confusion),digits=3)

@@ -1,3 +1,5 @@
+#This code takes the tweet_id, class as input data 
+#and generates a bar graph showing the counts of tweets per class
 
 # ---- plot-bar-graph
 plotBarGraph <- function(data) {

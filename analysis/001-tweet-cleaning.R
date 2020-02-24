@@ -1,5 +1,5 @@
 ## ---- Input-Data
-
+library(here)
 raw_data <- read.csv(here("Data","twitter-hate-speech-classifier-data.csv"))
 raw_data <- raw_data[c('tweet_text', 'does_this_tweet_contain_hate_speech', 'tweet_id')]
 
@@ -59,7 +59,8 @@ plotWordCloud <- function(data = raw_data) {
   res<-rquery.wordcloud(filePath, type ="text", lang = "english")
 }
 
-# The word cloud image generated from the above function has been saved in the analysis folder
+# The word cloud image generated from the above function has been saved in the analysis directory manually.
+# This image is called WordCloud.png and is referenced in paper.Rmd
 
 # One hot encoding of tokens
 datadb <- data.frame (
@@ -73,8 +74,8 @@ dtm2 <-  cbind(datadb$Class, as.matrix(dtm))
 colnames(dtm2) <- c("Classification", colnames(dtm))
 # Quality checks on output 
 # dtm2[1:5, 1:5] 
-# nrow(dtm2) 
-# ncol(dtm2)
+# nrow(dtm2) #3000 rows
+# ncol(dtm2) #7237 columns
 
 ## ---- Output-Data
 
