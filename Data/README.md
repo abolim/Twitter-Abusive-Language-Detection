@@ -2,7 +2,7 @@
 
 ### Original Data
 
-The original data used for this replication project can be found in this directory as **'twitter-hate-speech-classifier-data.csv'**
+The original data used for this replication project can be found in the Data directory in a file titles **'twitter-hate-speech-classifier-data.csv'**. This csv file contains 14,509 unique tweets (1 tweet per row) and 20 attributes. The size of this file is 2.73 MB.
 
 URL: https://github.com/abolim/Reproducibility-Research-Replication/tree/master/Data
 
