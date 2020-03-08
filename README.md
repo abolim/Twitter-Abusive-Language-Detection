@@ -64,5 +64,5 @@ R packages and versions:
 
 ### CONTRIBUTING
 
-We welcome contributions from everyone. If you would like to make a contribution, please read our contributor guidelines. Please note that this project is released with a [Contributor Code of Conduct](https://github.com/abolim/Reproducibility-Research-Replication/blob/master/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+We welcome contributions from everyone. If you would like to make a contribution, please read our [contributor guidelines](CONTRIBUTING.md). Please note that this project is released with a [Contributor Code of Conduct](https://github.com/abolim/Reproducibility-Research-Replication/blob/master/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
