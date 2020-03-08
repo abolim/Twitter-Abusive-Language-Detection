@@ -62,7 +62,7 @@ R packages and versions:
 |dplyr	            |0.8.3|
 |knitr	            |1.28|
 
-###LICENSE
+### LICENSE
 
 The project is licensed as MIT. Please read our [license details](LICENSE.md). 
 
