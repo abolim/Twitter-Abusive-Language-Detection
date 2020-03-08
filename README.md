@@ -64,7 +64,7 @@ R packages and versions:
 
 ###LICENSE
 
-The project is licensed as MIT. Please read our [license details](license.md). 
+The project is licensed as MIT. Please read our [license details](LICENSE.md). 
 
 ### CONTRIBUTING
 
