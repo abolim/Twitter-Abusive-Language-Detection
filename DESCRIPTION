@@ -16,9 +16,10 @@ Authors@R: c(person("Mayank", "Goel",
                     comment=c(ORDCID="0000-0003-1226-3185")),
              person("Harini", "Ram Prasad", 
                     email="hramprasad98@gmail.com", 
-                    role=c("aut"),
+                    role=c("aut", "cre"),
                     comment=c(ORDCID="0000-0001-5419-8030"))
              )
+Maintainer: The package maintainer <hramprasad98@gmail.com>
 Description: The package is an attempt to replicate detection of abusive, hateful and normal language on Twitter. 
     The model in this package is a logistic regression model for text classification. 
     It implements multiclass classification for various types of text on Twitter and gives 75% accuracy. 
