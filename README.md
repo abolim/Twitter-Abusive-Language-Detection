@@ -1,6 +1,9 @@
 # Replication of Comparative Studies of Detecting Abusive Language on Twitter
 This is a repository for the replication project for the Winter 2020 Data Reproducibility course in the Master of Data Science program at University of Washington.
 
+<!-- badges: start -->
+  [![Launch Rstudio Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/abolim/Reproducibility-Research-Replication/master?urlpath=rstudio)
+  <!-- badges: end -->
 
 ### CONTRIBUTORS
 
