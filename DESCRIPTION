@@ -1,0 +1,44 @@
+Package: reproducibilityproject
+Type: Package
+Title: Goel-Modi-Moroney-Ramprasad
+Version: 0.1.0
+Authors@R: c(person("Mayank", "Goel", 
+                  email="mickkygoel@gmail.com", 
+                  role=c("aut","cre","cph"),
+                  comment=c(ORDCID="0000-0002-2458-910X")),
+             person("Samarth", "Modi", 
+                    email="samarthjmodi@gmail.com", 
+                    role=c("aut","cre","cph"),
+                    comment=c(ORDCID="0000-0003-0681-231X"))
+             person("Aboli", "Moroney", 
+                    email="aboli.moroney9@gmail.com", 
+                    role=c("aut","cre","cph"),
+                    comment=c(ORDCID="0000-0003-1226-3185"))
+             person("Harini", "Ram Prasad", 
+                    email="hramprasad98@gmail.com", 
+                    role=c("aut","cre","cph"),
+                    comment=c(ORDCID="0000-0001-5419-8030"))
+             )
+Maintainer: The package maintainer <hramprasad98@gmail.com>
+  Description: More about what it does (maybe more than one line)
+Use four spaces when indenting paragraphs within the Description.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
+Suggests: 
+  testthat (>= 2.1.0)
+Imports:,
+    bookdown (>= 0.17),
+    caret (>= 6.0-85),
+    dplyr (>= 0.8.4),
+    ggplot2 (>= 3.2.1),
+    glm2 (>= 1.2.1),
+    here (>= 0.1),
+    knitr (>= 1.28),
+    LiblineaR (>= 2.10-8),
+    qdapDictionaries,
+    quanteda (>= 1.5.2),
+    stringr (>= 1.4.0),
+    tidytext,
+    tm (>= 0.7-7)
