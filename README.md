@@ -6,7 +6,7 @@ This is a repository for the replication project for the Winter 2020 Data Reprod
 [![R build status](https://github.com/abolim/Reproducibility-Research-Replication/workflows/R-CMD-check/badge.svg)](https://github.com/abolim/Reproducibility-Research-Replication/actions)
 <!-- badges: end -->
 
-Link to DOI: [10.17605/OSF.IO/RX9SQ](https://osf.io/rx9sq/)
+DOI: [10.17605/OSF.IO/RX9SQ](https://osf.io/rx9sq/)
 
 ### CONTRIBUTORS
 
