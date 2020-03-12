@@ -1,4 +1,4 @@
-Package: reproducibilityproject
+Package: Reproducibility-Research-Replication
 Type: Package
 Title: Goel-Modi-Moroney-Ramprasad
 Version: 0.1.0
@@ -42,5 +42,5 @@ Imports:
     stringr (>= 1.4.0),
     tidytext,
     tm (>= 0.7-7)
-URL: https://github.com/abolim/reproducibilityproject
-BugReports: https://github.com/abolim/reproducibilityproject/issues
+URL: https://github.com/abolim/Reproducibility-Research-Replication
+BugReports: https://github.com/abolim/Reproducibility-Research-Replication/issues
