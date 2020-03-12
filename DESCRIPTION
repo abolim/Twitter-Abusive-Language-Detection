@@ -4,19 +4,19 @@ Title: Goel-Modi-Moroney-Ramprasad
 Version: 0.1.0
 Authors@R: c(person("Mayank", "Goel", 
                   email="mickkygoel@gmail.com", 
-                  role=c("aut","cre","cph"),
+                  role=c("aut"),
                   comment=c(ORDCID="0000-0002-2458-910X")),
              person("Samarth", "Modi", 
                     email="samarthjmodi@gmail.com", 
-                    role=c("aut","cre","cph"),
+                    role=c("aut"),
                     comment=c(ORDCID="0000-0003-0681-231X")),
              person("Aboli", "Moroney", 
                     email="aboli.moroney9@gmail.com", 
-                    role=c("aut","cre","cph"),
+                    role=c("aut"),
                     comment=c(ORDCID="0000-0003-1226-3185")),
              person("Harini", "Ram Prasad", 
                     email="hramprasad98@gmail.com", 
-                    role=c("aut","cre","cph"),
+                    role=c("aut","cre"),
                     comment=c(ORDCID="0000-0001-5419-8030"))
              )
 Maintainer: The package maintainer <hramprasad98@gmail.com>
