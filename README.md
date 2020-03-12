@@ -6,6 +6,8 @@ This is a repository for the replication project for the Winter 2020 Data Reprod
 [![R build status](https://github.com/abolim/Reproducibility-Research-Replication/workflows/R-CMD-check/badge.svg)](https://github.com/abolim/Reproducibility-Research-Replication/actions)
 <!-- badges: end -->
 
+Link to DOI: [10.17605/OSF.IO/RX9SQ](https://osf.io/rx9sq/)
+
 ### CONTRIBUTORS
 
 1. [Aboli Moroney](https://github.com/abolim "Aboli's Github page") <a itemprop="sameAs" content="https://orcid.org/0000-0003-1226-3185" href="https://orcid.org/0000-0003-1226-3185" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>
