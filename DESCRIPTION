@@ -28,7 +28,7 @@ LazyData: true
 RoxygenNote: 7.0.2
 Suggests: 
   testthat (>= 2.1.0)
-Imports: ,
+Imports: 
     bookdown (>= 0.17),
     caret (>= 6.0-85),
     dplyr (>= 0.8.4),
