@@ -16,12 +16,13 @@ Authors@R: c(person("Mayank", "Goel",
                     comment=c(ORDCID="0000-0003-1226-3185")),
              person("Harini", "Ram Prasad", 
                     email="hramprasad98@gmail.com", 
-                    role=c("aut","cre"),
+                    role=c("aut"),
                     comment=c(ORDCID="0000-0001-5419-8030"))
              )
-Maintainer: The package maintainer <hramprasad98@gmail.com>
-  Description: More about what it does (maybe more than one line)
-  Use four spaces when indenting paragraphs within the Description.
+Description: The package is an attempt to replicate detection of abusive, hateful and normal language on Twitter. 
+    The model in this package is a logistic regression model for text classification. 
+    It implements multiclass classification for various types of text on Twitter and gives 75% accuracy. 
+    Additionally, a word cloud and bar graphs are displayed as part of an exploratory data analysis.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
