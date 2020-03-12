@@ -9,11 +9,11 @@ Authors@R: c(person("Mayank", "Goel",
              person("Samarth", "Modi", 
                     email="samarthjmodi@gmail.com", 
                     role=c("aut","cre","cph"),
-                    comment=c(ORDCID="0000-0003-0681-231X"))
+                    comment=c(ORDCID="0000-0003-0681-231X")),
              person("Aboli", "Moroney", 
                     email="aboli.moroney9@gmail.com", 
                     role=c("aut","cre","cph"),
-                    comment=c(ORDCID="0000-0003-1226-3185"))
+                    comment=c(ORDCID="0000-0003-1226-3185")),
              person("Harini", "Ram Prasad", 
                     email="hramprasad98@gmail.com", 
                     role=c("aut","cre","cph"),
