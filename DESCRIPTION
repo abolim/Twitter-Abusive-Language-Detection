@@ -1,6 +1,6 @@
-Package: twitterreplication
+Package: compendium
 Type: Package
-Title: Goel-Modi-Moroney-Ramprasad
+Title: Goel Modi Moroney Ramprasad
 Version: 0.1.0
 Authors@R: c(person("Mayank", "Goel", 
                   email="mickkygoel@gmail.com", 
