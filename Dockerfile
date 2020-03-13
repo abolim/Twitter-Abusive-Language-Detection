@@ -4,7 +4,7 @@ FROM rocker/verse:3.6.1
 # required
 MAINTAINER Your Name <your_email@somewhere.com>
 
-COPY . /Reproducibility-Research-Replication
+COPY . /compendium
 
 # go into the repo directory
 RUN . /etc/environment \
@@ -13,8 +13,8 @@ RUN . /etc/environment \
   && sudo apt-get update \
   && sudo apt-get install libudunits2-dev -y \
   # build this compendium package
-  && R -e "devtools::install('/Reproducibility-Research-Replication', dep=TRUE)" \
+  && R -e "devtools::install('/compendium', dep=TRUE)" \
   # render the manuscript into a docx, you'll need to edit this if you've
   # customised the location and name of your main Rmd file
-  && R -e "devtools::check('/Reproducibility-Research-Replication',error_on = 'error')" \
- && R -e "rmarkdown::render('/Reproducibility-Research-Replication/analysis/paper.Rmd')"
+  && R -e "devtools::check('/compendium',error_on = 'error')" \
+ && R -e "rmarkdown::render('/compendium/analysis/paper.Rmd')"
