@@ -20,8 +20,7 @@ Authors@R: c(person("Mayank", "Goel",
                     comment=c(ORDCID="0000-0001-5419-8030"))
              )
 Maintainer: The package maintainer <hramprasad98@gmail.com>
-  Description: More about what it does (maybe more than one line)
-Use four spaces when indenting paragraphs within the Description.
+Description: More about what it does (maybe more than one line).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
