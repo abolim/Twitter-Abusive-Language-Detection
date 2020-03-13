@@ -16,5 +16,5 @@ RUN . /etc/environment \
   && R -e "devtools::install('/Reproducibility-Research-Replication', dep=TRUE)" \
   # render the manuscript into a docx, you'll need to edit this if you've
   # customised the location and name of your main Rmd file
-  && R -e "devtools::check('/Reproducibility-Research-Replication',error_on = 'error')" \
- && R -e "rmarkdown::render('/Reproducibility-Research-Replication/analysis/paper.Rmd')"
+  && R -e "devtools::check('/Reproducibility-Research-Replication/analysis/paper.Rmd')" \
+  && R -e "rmarkdown::render('/Reproducibility-Research-Replication/analysis/paper.Rmd')"
