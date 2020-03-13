@@ -40,6 +40,7 @@ library(knitr)
 raw_data <- read.csv(here("Data","twitter-hate-speech-classifier-data.csv"))
 raw_data = raw_data[c("tweet_id", "tweet_text", "does_this_tweet_contain_hate_speech")]
 kable(head(raw_data,7),caption = "Table 1: Raw tweets from original dataset")
+
 ```
 
 
