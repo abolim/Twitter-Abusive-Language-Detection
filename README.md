@@ -3,7 +3,7 @@ This is a repository for the replication project for the Winter 2020 Data Reprod
 
 <!-- badges: start -->
 [![Launch Rstudio Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/abolim/Reproducibility-Research-Replication/master?urlpath=rstudio)
-[![R build status](https://github.com/abolim/Reproducibility-Research-Replication/workflows/R-CMD-check/badge.svg)](https://github.com/abolim/Reproducibility-Research-Replication/actions)
+[![Build Docker Container](https://github.com/abolim/Reproducibility-Research-Replication/workflows/Build-Docker-Container/badge.svg)](https://github.com/abolim/Reproducibility-Research-Replication/actions)
 [![DOI](https://img.shields.io/badge/OSF-DOI%3A%2010.17605%2FOSF.IO%2FRX9SQ-brightgreen)](https://doi.org/10.17605/OSF.IO/RX9SQ)
 <!-- badges: end -->
 
