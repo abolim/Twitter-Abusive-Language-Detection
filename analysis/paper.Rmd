@@ -33,7 +33,7 @@ The [original data file](https://github.com/ENCASEH2020/hatespeech-twitter) cont
 
 Below is a snapshot of original data. 
 
-```{r raw-data-analysis, echo = FALSE, eval = FALSE}
+```{r raw-data-analysis, echo = FALSE}
 #Note to reader: This is a long-running code, but will not be evaluated unless the you set `eval=TRUE` 
 
 library(here)
@@ -43,6 +43,7 @@ raw_data <- read.csv(here("Data","twitter-hate-speech-classifier-data.csv"))
 #Keeping only the necessary columns
 raw_data = raw_data[c("tweet_id", "tweet_text", "does_this_tweet_contain_hate_speech")]
 kable(head(raw_data,7),caption = "Table 1: Raw tweets from original dataset")
+
 ```
 
 

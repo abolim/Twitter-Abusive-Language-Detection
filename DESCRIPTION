@@ -1,6 +1,6 @@
 Package: compendium
 Type: Package
-Title: Goel Modi Moroney Ramprasad
+Title: compendium
 Version: 0.1.0
 Authors@R: c(person("Mayank", "Goel", 
                   email="mickkygoel@gmail.com", 
@@ -30,19 +30,20 @@ LazyData: true
 RoxygenNote: 7.0.2
 Suggests: 
   testthat (>= 2.1.0)
-Imports: 
-    bookdown (>= 0.17),
-    caret (>= 6.0-85),
-    dplyr (>= 0.8.4),
-    ggplot2 (>= 3.2.1),
-    glm2 (>= 1.2.1),
-    here (>= 0.1),
-    knitr (>= 1.28),
-    LiblineaR (>= 2.10-8),
+Imports:
+    bookdown,
+    caret,
+    dplyr,
+    ggplot2,
+    glm2,
+    here,
+    knitr,
+    LiblineaR,
     qdapDictionaries,
-    quanteda (>= 1.5.2),
-    stringr (>= 1.4.0),
+    quanteda,
+    stringr,
     tidytext,
-    tm (>= 0.7-7)
+    tm 
 URL: https://github.com/abolim/Reproducibility-Research-Replication
 BugReports: https://github.com/abolim/Reproducibility-Research-Replication/issues
+

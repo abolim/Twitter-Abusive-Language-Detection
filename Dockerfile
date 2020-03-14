@@ -16,5 +16,6 @@ RUN . /etc/environment \
   && R -e "devtools::install('/compendium', dep=TRUE)" \
   # render the manuscript into a docx, you'll need to edit this if you've
   # customised the location and name of your main Rmd file
-  && R -e "devtools::check('/compendium/analysis/paper.Rmd')" \
+  && R -e "devtools::check('/compendium', error_on = 'error')" \
   && R -e "rmarkdown::render('/compendium/analysis/paper.Rmd')"
+
