@@ -1,4 +1,5 @@
-^\.github/workflows/R-CMD-check\.yaml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.binder$
+^\.github$
 
