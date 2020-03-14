@@ -8,7 +8,7 @@ bibliography: bibliography.bib
 ---
 
 
-```{r setup, include = FALSE}
+```{r setup, include = FALSE, eval = FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 #knitr::read_chunk('001-tweet-cleaning.R')
 ```
@@ -33,11 +33,14 @@ The [original data file](https://github.com/ENCASEH2020/hatespeech-twitter) cont
 
 Below is a snapshot of original data. 
 
-```{r raw-data-analysis, echo = FALSE}
-#Keeping only the necessary columns
+```{r raw-data-analysis, echo = FALSE, eval = FALSE}
+#Note to reader: This is a long-running code, but will not be evaluated unless the you set `eval=TRUE` 
+
 library(here)
 library(knitr)
 raw_data <- read.csv(here("Data","twitter-hate-speech-classifier-data.csv"))
+
+#Keeping only the necessary columns
 raw_data = raw_data[c("tweet_id", "tweet_text", "does_this_tweet_contain_hate_speech")]
 kable(head(raw_data,7),caption = "Table 1: Raw tweets from original dataset")
 
@@ -72,8 +75,8 @@ Therefore for our replication study, we have taken a random sample of 3000 tweet
 
 Below is a visual representation of the distribution of tweets by classes for this sampled dataset which can be found in the 'analysis' folder in our repository as [sampled_tweet_dataset.csv](https://github.com/abolim/Reproducibility-Research-Replication/tree/master/aanalysis). The R code used to generate this dataset can be found in [001-tweet-cleaning.R](https://github.com/abolim/Reproducibility-Research-Replication/tree/master/analysis)
 
-```{r echo = FALSE}
-
+```{r echo = FALSE, eval=FALSE}
+#Note to reader: This is a long-running code, but will not be evaluated unless the you set `eval=TRUE` 
 sampled_data <- read.csv(here("analysis","sampled_tweet_dataset.csv"))
 d <- data.frame(summary(sampled_data$does_this_tweet_contain_hate_speech))
 names(d) <- c('Number of Tweets')
@@ -97,7 +100,8 @@ Here is the quick comparison between raw and cleaned tweets after pre-processing
 ```{r Loading-Libraries, echo = FALSE}
 ```
 
-```{r Data-Preparation, echo = FALSE}
+```{r Data-Preparation, echo = FALSE, eval=FALSE}
+#Note to reader: This is a long-running code, but will not be evaluated unless the you set `eval=TRUE` 
 refined_data <- read.csv(here("analysis","refined_tweet_dataset.csv"))
 #data.frame(refined_data$tweet_text[1:5], refined_data$tweet_clean1[1:5])
 kable(refined_data[1:5,c('tweet_text', 'tweet_clean1')], caption = "Table 2: Refined dataset with cleaned tweets")
@@ -114,7 +118,8 @@ After tokenization, the next step was to encode the tokens using one-hot encodin
 
 Below is a snapshot for a few rows and columns from this dataset.
 
-```{r tokenization}
+```{r tokenization, eval=FALSE}
+#Note to reader: This is a long-running code, but will not be evaluated unless the you set `eval=TRUE` 
 
 model_data <- read.csv(here("analysis","prepared_tweet_dataset.csv"))
 #data.frame(refined_data$tweet_text[1:5], refined_data$tweet_clean1[1:5])

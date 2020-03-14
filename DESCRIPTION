@@ -4,23 +4,26 @@ Title: compendium
 Version: 0.1.0
 Authors@R: c(person("Mayank", "Goel", 
                   email="mickkygoel@gmail.com", 
-                  role=c("aut","cre","cph"),
+                  role=c("aut"),
                   comment=c(ORDCID="0000-0002-2458-910X")),
              person("Samarth", "Modi", 
                     email="samarthjmodi@gmail.com", 
-                    role=c("aut","cph"),
+                    role=c("aut"),
                     comment=c(ORDCID="0000-0003-0681-231X")),
              person("Aboli", "Moroney", 
                     email="aboli.moroney9@gmail.com", 
-                    role=c("aut","cph"),
+                    role=c("aut"),
                     comment=c(ORDCID="0000-0003-1226-3185")),
              person("Harini", "Ram Prasad", 
                     email="hramprasad98@gmail.com", 
-                    role=c("aut","cph"),
+                    role=c("aut", "cre"),
                     comment=c(ORDCID="0000-0001-5419-8030"))
              )
 Maintainer: The package maintainer <hramprasad98@gmail.com>
-Description: More about what it does (maybe more than one line).
+Description: The package is an attempt to replicate detection of abusive, hateful and normal language on Twitter. 
+    The model in this package is a logistic regression model for text classification. 
+    It implements multiclass classification for various types of text on Twitter and gives 75% accuracy. 
+    Additionally, a word cloud and bar graphs are displayed as part of an exploratory data analysis.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -41,3 +44,6 @@ Imports:
     stringr,
     tidytext,
     tm 
+URL: https://github.com/abolim/Reproducibility-Research-Replication
+BugReports: https://github.com/abolim/Reproducibility-Research-Replication/issues
+

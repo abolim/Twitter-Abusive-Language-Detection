@@ -1,8 +1,8 @@
 # get the base image, the rocker/verse has R, RStudio and pandoc
-FROM rocker/verse:3.6.1
+FROM rocker/verse:3.6.2
 
 # required
-MAINTAINER Your Name <your_email@somewhere.com>
+MAINTAINER Aboli Moroney <aboli.moroney9@gmail.com>
 
 COPY . /compendium
 
@@ -16,5 +16,6 @@ RUN . /etc/environment \
   && R -e "devtools::install('/compendium', dep=TRUE)" \
   # render the manuscript into a docx, you'll need to edit this if you've
   # customised the location and name of your main Rmd file
-  && R -e "devtools::check('/compendium',error_on = 'error')" \
- && R -e "rmarkdown::render('/compendium/analysis/paper.Rmd')"
+  && R -e "devtools::check('/compendium', error_on = 'error')" \
+  && R -e "rmarkdown::render('/compendium/analysis/paper.Rmd')"
+
