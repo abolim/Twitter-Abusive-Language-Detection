@@ -29,15 +29,15 @@ Suggests:
   testthat (>= 2.1.0)
 Imports:
     bookdown,
-    caret (>= 6.0-85),
-    dplyr (>= 0.8.4),
-    ggplot2 (>= 3.2.1),
-    glm2 (>= 1.2.1),
-    here (>= 0.1),
-    knitr (>= 1.28),
-    LiblineaR (>= 2.10-8),
+    caret,
+    dplyr,
+    ggplot2,
+    glm2,
+    here,
+    knitr,
+    LiblineaR,
     qdapDictionaries,
-    quanteda (>= 1.5.2),
-    stringr (>= 1.4.0),
+    quanteda,
+    stringr,
     tidytext,
-    tm (>= 0.7-7)
+    tm 
